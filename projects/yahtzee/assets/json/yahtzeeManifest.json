@@ -1,19 +1,19 @@
 { 
     "title": "Yahtzee",
-    "summarySrc": "Projects/Yahtzee/assets/docs/yahtzeeSummary.txt",
-    "defaultSrc": "Projects/Yahtzee/playingAreaYatzy.html",
+    "summarySrc": "projects/yahtzee/assets/docs/yahtzeeSummary.txt",
+    "defaultSrc": "projects/yahtzee/playingAreaYatzy.html",
     "assets": [
         {
             "label": "Source Files",
             "children": [
-                { "label": "Script (JS)", "src": "Projects/Yahtzee/assets/js/scriptGame.js", "embed": "iframe"}
+                { "label": "Script (JS)", "src": "projects/yahtzee/assets/js/scriptGame.js", "embed": "iframe"}
             ]
         },
         {
             "label": "Documentation",
             "children": [
                 { "label": "Design Notes(md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/cst3106_portfolio/refs/heads/main/public/projects/yahtzee/assets/docs/design_documentation.md", "embed": "iframe"},
-                { "label": "Rules(PDF)", "src": "Projects/Yahtzee/docs/rules.pdf", "embed": "iframe"}
+                { "label": "Rules(PDF)", "src": "projects/Yahtzee/docs/rules.pdf", "embed": "iframe"}
                 
             ]
         }
