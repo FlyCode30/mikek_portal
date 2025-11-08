@@ -85,7 +85,7 @@ const dieImg = v => v === 0 ? `assets/img/side0.png` : `assets/img/side${v}.png`
 
 let tempTopScores = { scoreTop1: 0, scoreTop2: 0, scoreTop3: 0, scoreTop4: 0, scoreTop5: 0, scoreTop6: 0 };
 const comTopScores = { scoreTop1: 0, scoreTop2: 0, scoreTop3: 0, scoreTop4: 0, scoreTop5: 0, scoreTop6: 0 };
-let totalScores = { scoreTopSub: 0, scoreTopBonus: 0, scoreTopTotal: 0, scoreBotTotal: 0, scoreGameTotal: 0}
+let totalScores = { scoreTopSub: 0, scoreTopBonus: 0, scoreTopTotal: 0, scoreBotTotal: 0, scoreGameTotal: 0};
 let tempBotScores = { scoreBot3k: 0, scoreBot4k: 0, scoreBotFH: 0, scoreBotSS: 0, scoreBotLS: 0, scoreBotYah: 0, scoreBotChan: 0 };
 const comBotScores = { scoreBot3k: 0, scoreBot4k: 0, scoreBotFH: 0, scoreBotSS: 0, scoreBotLS: 0, scoreBotYah: 0, scoreBotChan: 0 };
 
