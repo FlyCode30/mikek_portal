@@ -80,7 +80,7 @@ const MAX_ROLLS = 3;
 // 
 
 
-const dieImg = v => v === 0 ? `assets/images/side0.png` : `assets/images/side${v}.png`;
+const dieImg = v => v === 0 ? `assets/img/side0.png` : `assets/img/side${v}.png`;
 
 
 let tempTopScores = { scoreTop1: 0, scoreTop2: 0, scoreTop3: 0, scoreTop4: 0, scoreTop5: 0, scoreTop6: 0 };
