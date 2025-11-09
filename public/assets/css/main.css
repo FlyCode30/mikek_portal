@@ -3,6 +3,7 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+@import '//custom';
 :root {
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway", sans-serif;
@@ -1298,15 +1299,4 @@ section,
 }
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-body::after {
-  content: "Custom SCSS Loaded!";
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background: yellow;
-  color: black;
-  padding: 0.25rem 0.5rem;
-  z-index: 9999;
 }/*# sourceMappingURL=main.css.map */
