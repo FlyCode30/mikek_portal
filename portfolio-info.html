@@ -86,6 +86,11 @@
         </div>
       </div>
 
+      <div class="button-download text-center">
+      <a id="downloadBtn" class="btn btn-primary" href="#" download>Download</a>
+      </div>
+      
+
       <nav class="breadcrumbs">
         <div class="container">
           <ol id="breadcrumb-list">
@@ -175,7 +180,8 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
         if (item.embed === 'newtab') {
           window.open(item.src, '_blank', 'noopener');
         } else if (frame) {
-          frame.src = item.src;
+          // frame.src = item.src;
+          setFrameSrc(item.src);
         }
 
         // ✅ Breadcrumb: Project / Default(link) / Current(plain)
@@ -185,7 +191,7 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
         // URL sync
         const url = new URL(location.href);
         url.searchParams.set('p', projectKey);
-        url.searchParams.set('asset', encodeURIComponent(item.label));
+        url.searchParams.set('asset', item.label);
         history.replaceState(null, '', url);
       });
 
@@ -242,7 +248,10 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
     }
 
     // Default iframe (load the project’s main page)
-    if (frame && manifest.defaultSrc) frame.src = manifest.defaultSrc;
+    if (frame && manifest.defaultSrc) { 
+      // frame.src = manifest.defaultSrc;
+      setFrameSrc(manifest.defaultSrc, filenameFromUrl(manifest.defaultSrc));
+    }
 
     // Initialize breadcrumbs for this project
     updateBreadcrumb(manifest.title, manifest.defaultSrc, null);
@@ -254,8 +263,9 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
       const flatAssets = flattenAssets(manifest.assets);
       const found = flatAssets.find(a => a.label === assetLabel && a.embed !== 'newtab');
       if (found && frame) {
-        frame.src = found.src;
+        setFrameSrc(found.src, found.label);
         updateBreadcrumb(manifest.title, manifest.defaultSrc, found.label);
+        
       }
     }
 
@@ -317,7 +327,7 @@ function initBreadcrumb(frame, projectKey, defaultSrc, projectTitle) {
       const src   = defaultLink.dataset.src;
       const title = defaultLink.dataset.title;
 
-      if (frame && src) frame.src = src;
+      if (frame && src) setFrameSrc(src);
 
       // back to just "... / ProjectTitle Main"
       updateBreadcrumb(title, src, null);
@@ -332,6 +342,42 @@ function initBreadcrumb(frame, projectKey, defaultSrc, projectTitle) {
     }
   });
 }
+
+// testing a download button for project files
+
+function filenameFromUrl(url, fallback = "download") {
+  try {
+    const u = new URL(url, location.href); // handles relative paths
+    const last = u.pathname.split("/").filter(Boolean).pop() || fallback;
+    return decodeURIComponent(last);
+  } catch {
+    return fallback;
+  }
+}
+
+function updateDownloadLink(currentSrc, suggestedName) {
+  const a = document.getElementById("downloadBtn"); // <a id="downloadBtn" ...>
+  if (!a) return;
+
+  const fname = suggestedName || filenameFromUrl(currentSrc);
+  a.href = currentSrc;
+  a.setAttribute("download", fname);
+}
+
+// The one true way to set the frame + download
+function setFrameSrc(src, labelForName) {
+  const frame = document.getElementById("project-frame"); // make sure this ID matches
+  if (!frame) return;
+
+   // Resolve relative paths against THIS page (works locally & on GitHub Pages)
+  const resolved = new URL(src, document.baseURI).toString();
+
+  frame.src = resolved;
+  updateDownloadLink(resolved, labelForName || filenameFromUrl(resolved));
+
+  console.log("[setFrameSrc] src:", src, "→ resolved:", resolved);
+}
+
 </script>
 
   <!-- Scroll Top -->

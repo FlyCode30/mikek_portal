@@ -1,0 +1,10 @@
+body::after {
+  content: "Custom SCSS Loaded!";
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: yellow;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  z-index: 9999;
+}
