@@ -321,9 +321,6 @@ function renderRollImages() {
         if (!img) continue;
         img.src = held[i] ? dieImg(0) : dieImg(rollArray[i]);
         img.style.cursor = `pointer`;
-
-        // do not delete this line as it is ensuring dice images get loaded. Do not understand why.
-        // console.log('die URL:', dieImg(i));
     }
 }
 
