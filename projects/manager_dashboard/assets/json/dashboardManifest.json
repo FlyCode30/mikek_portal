@@ -1,7 +1,7 @@
 { 
     "title": "Mock Manager Dashboard",
     "summarySrc": "",
-    "defaultSrc": "assets/img/power_bi_dashboard.pdf",
+    "defaultSrc": "projects/manager_dashboard/assets/img/power_bi_dashboard.pdf",
     "assets": [
         {
             "label": "Source Files",
