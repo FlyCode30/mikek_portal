@@ -6,7 +6,7 @@
         {
             "label": "Source Files",
             "children": [
-                { "label": "Script (JS)", "src": "projects/yahtzee/assets/JS/scriptGame.js", "embed": "iframe"}
+                { }
             ]
         },
         {
