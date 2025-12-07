@@ -1,0 +1,2 @@
+- This is a student project where we tasked to create an hospital triage app using html, css, JavaScript, Express, and our choice of database. This one uses MySQL
+- This project had a limited scope, meaning that functionalities which would normally be separate were combined in order to meet the requirements. Future iterations of this app will hope to continue to use it as a good training app, which will include separating the functionality and scope of the project
