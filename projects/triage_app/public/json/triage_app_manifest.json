@@ -6,8 +6,8 @@
         {
             "label": "Read Me",
             "children": [
-                { "label": "App Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" },
-                { "label": "Database Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/README.md", "embed": "iframe" }
+                { "label": "App Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/README.md", "embed": "iframe" },
+                { "label": "Database Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" }
             ]
         },
         {
