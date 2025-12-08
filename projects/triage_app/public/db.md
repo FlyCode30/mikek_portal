@@ -121,4 +121,4 @@ This database follows a **star schema** pattern with:
 - Enables analysis of wait times, patient flow, and resource utilization
 - UI queries combine current state (dimensions) with historical data (facts)
 
-<img src="triage_app_db_model.png" alt="ERD of Hospital Triage App" width="600">
+<img src="docs/triage_app_db_model.png" alt="ERD of Hospital Triage App" width="600">
