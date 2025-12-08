@@ -15,7 +15,7 @@ This repository contains **two versions of the project**:
 
 ## 🌐 Live Demo  
 *(Static JSON version — UI only)*  
-🔗 https://**your-username**.github.io/**repo-name**/projects/triage_app/public/
+🔗 https://flycode30.github.io/mikek_portal/portfolio-info.html?p=triage_app
 
 ---
 
@@ -38,7 +38,7 @@ This repository contains **two versions of the project**:
 ### Static Demo (Portfolio Version)
 - Displays patient triage list and wait-time metrics
 - Reads patient data from JSON (simulated DB output)
-- Responsive UI for browsing triage queue
+- Responsive UI for browsing triage queue that includes dynmaic and search features
 
 ### Full Backend Version
 - Add/Update/View patients (CRUD)
@@ -49,3 +49,12 @@ This repository contains **two versions of the project**:
 ---
 
 ## 🗂 Project Structure
+
+project(triage_app)/
+├─ public/ # Static demo UI (JSON-based)
+  |─ assets/ # Styles, images, icons...
+├─ server/ # Backend (Node+Express)
+│ ├─ routes/ # API endpoints
+│ ├─ models/ # Database query logic
+│ └─ db/ # schema.sql, seeds, connection
+└─ mock-data/ # JSON output for static demo
