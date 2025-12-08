@@ -12,8 +12,8 @@
         {
             "label": "Database",
             "children": [
-                { "label": "Database Readme (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/cst3106_portfolio/refs/heads/main/public/projects/yahtzee/assets/docs/design_documentation.md", "embed": "iframe"},
-                { "label": "Rules(PDF)", "src": "projects/Yahtzee/docs/rules.pdf", "embed": "iframe"}
+                { "label": "Database Readme (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/add_hospital_triage_app/projects/triage_app/public/db.md", "embed": "iframe"},
+                { "label": "Schema", "src": "projects/triage_app/public/docs/triage_app_db_model.png", "embed": "iframe"}
                 
             ]
         }
