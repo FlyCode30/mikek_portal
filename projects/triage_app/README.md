@@ -50,11 +50,14 @@ This repository contains **two versions of the project**:
 
 ## 🗂 Project Structure
 
-project(triage_app)/
-├─ public/ # Static demo UI (JSON-based)
-  |─ assets/ # Styles, images, icons...
-├─ server/ # Backend (Node+Express)
-│ ├─ routes/ # API endpoints
-│ ├─ models/ # Database query logic
-│ └─ db/ # schema.sql, seeds, connection
-└─ mock-data/ # JSON output for static demo
+project-root/
+├─ public/                # UI static files
+│  ├─ index.html
+│  └─ styles.css
+├─ server/                # Backend code
+│  ├─ server.js
+│  ├─ routes/
+│  └─ db/
+├─ mock-data/
+│  └─ patients.json
+└─ README.md
