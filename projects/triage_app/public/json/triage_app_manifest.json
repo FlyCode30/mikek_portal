@@ -4,15 +4,15 @@
     "defaultSrc": "projects/triage_app/public/index.html",
     "assets": [
         {
-            "label": "Source Files",
+            "label": "Read Me",
             "children": [
-                { }
+                { "label": "App Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" },
+                { "label": "Database Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/README.md", "embed": "iframe" }
             ]
         },
         {
             "label": "Database",
             "children": [
-                { "label": "Database Readme (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/add_hospital_triage_app/projects/triage_app/public/db.md", "embed": "iframe"},
                 { "label": "Schema", "src": "projects/triage_app/public/docs/triage_app_db_model.png", "embed": "iframe"}
                 
             ]
