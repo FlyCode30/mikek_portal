@@ -50,6 +50,7 @@ This repository contains **two versions of the project**:
 
 ## 🗂 Project Structure
 
+```txt
 project-root/
 ├─ public/                # UI static files
 │  ├─ index.html
@@ -61,3 +62,4 @@ project-root/
 ├─ mock-data/
 │  └─ patients.json
 └─ README.md
+```
