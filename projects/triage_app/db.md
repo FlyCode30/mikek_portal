@@ -1,11 +1,5 @@
 # Hospital Triage App Database Schema
 
-## Preface
-
-This project originally ran as a full stack application using a Node.js/Express server and a MySQL database. For the portfolio version hosted on GitHub Pages, the backend has been removed and the application is powered by static JSON data instead. The schema below represents the original database design. It is my intention to gradually shift this back to using a database, but for now, this was left to explain the original design choices made.
-
-Also, it should be noted that this was done as a school project with specific scope. For that reason, certain functions of the app were combined into 1 UI, although future iterations will attempt to separate functions so it more closely resembles something that used in real life (for example, a database that contains medical information wouldn't also serve as an entity to store the login information for a specific app).
-
 ## 1. Entities Description
 
 ### 1.1 Patient (Dimension Table)
