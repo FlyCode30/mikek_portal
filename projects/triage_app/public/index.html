@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hospital Triage Dashboard</title>
+  <!-- SB Admin 2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@4.1.3/css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- DataTables CSS -->
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content" class="container-fluid">
+
+
+        <!-- Page Heading with Nav button-->
+         <!-- this nav button is only meant as a temporary measure to allow an easy transition between the staff patient list and the patient dashboard. 
+          in a real world setting, these would be either completely different apps, or complete separate functionalities within the same overall app -->
+        <div class="d-flex align-items-center gap-4 mb-4">
+          <h1 class="h3 mb-4 text-gray-800">Hospital Triage Dashboard</h1>
+
+            <a href="login.html" class="btn btn-info btn-icon-split" style="margin-left: 3rem;">
+              <span class="icon text-white-50">
+                  <i class="fas fa-info-circle"></i>
+              </span>
+              <span class="text">Patient Dashboard</span>
+            </a>
+        </div>
+        <!-- Patient Table Card -->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Patients Waiting</h6>
+            <button class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#addPatientModal">Add Patient</button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table id="patientTable" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Patient ID</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Triage Level</th>
+                    <th>Wait Status</th>
+                    <th>Diagnosis</th>
+                    <th>Current Wait (min)</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Data populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Add Patient Modal -->
+  <div class="modal fade" id="addPatientModal" tabindex="-1" role="dialog" aria-labelledby="addPatientModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPatientModalLabel">Add New Patient</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addPatientForm">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="form-group">
+              <label for="triageLevel">Triage Level</label>
+              <select class="form-control" id="triageLevel" required>
+                <option value="1">1 - Resuscitation</option>
+                <option value="2">2 - Emergent</option>
+                <option value="3">3 - Urgent</option>
+                <option value="4">4 - Less Urgent</option>
+                <option value="5">5 - Non-Urgent</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="triDate">Triage Date</label>
+              <input type="date" class="form-control" id="triDateAdd" required>
+            </div>
+                 <div class="form-group">
+              <label for="triTime">Triage Time</label>
+              <input type="time" class="form-control" id="triTimeAdd" required>
+            </div>
+            <div class="form-group">
+              <label for="diagnosis">Diagnosis</label>
+              <input type="text" class="form-control" id="diagnosis" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Patient</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Patient Modal -->
+  <div class="modal fade" id="editPatientModal" tabindex="-1" role="dialog" aria-labelledby="editPatientModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editPatientModalLabel">Edit Patient</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="editPatientForm">
+            <input type="hidden" id="editPtId">
+            <div class="form-group">
+              <label for="editFirstName">First Name</label>
+              <input type="text" class="form-control" id="editFirstName" required>
+            </div>
+            <div class="form-group">
+              <label for="editLastName">Last Name</label>
+              <input type="text" class="form-control" id="editLastName" required>
+            </div>
+            <div class="form-group">
+              <label for="editTriageLevel">Triage Level</label>
+              <select class="form-control" id="editTriageLevel" required>
+                <option value="1">1 - Resuscitation</option>
+                <option value="2">2 - Emergent</option>
+                <option value="3">3 - Urgent</option>
+                <option value="4">4 - Less Urgent</option>
+                <option value="5">5 - Non-Urgent</option>
+              </select>
+            </div>
+             <div class="form-group">
+              <label for="editMoveStatus">Move Status</label>
+              <select class="form-control" id="editMoveStatus" required>
+                <option value="complete">Complete</option>
+                <option value="pending">Pending</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="editDiagnosis">Diagnosis</label>
+              <input type="text" class="form-control" id="editDiagnosis" required>
+            </div>
+                  <div class="form-group">
+              <label for="editTriDate">Triage Date</label>
+              <input type="date" class="form-control" id="editTriDate" required>
+            </div>
+                 <div class="form-group">
+              <label for="editTriTime">Triage Time</label>
+              <input type="time" class="form-control" id="editTriTime" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Patient</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+  <script src="js/api_web.js"></script>
+
+  <script>
+
+    $(document).ready(function() {
+      const table = $('#patientTable').DataTable({
+        columns: [
+          { data: 'pt_id' },
+          { data: 'last_name' },
+          { data: 'first_name' },
+          { data: 'tri_id' },
+          { data: 'move_status' },
+          { data: 'diagnosis' },
+          { data: 'time_waiting' },
+          { data: null, render: function(data, type, row) {
+              return `<button class="btn btn-sm btn-info edit-btn" data-id="${row.pt_id}">Edit</button>`;
+            } 
+          }
+        ]
+      });
+
+      async function loadPatients() {
+        const data = await getPtList();
+        table.clear().rows.add(data).draw();
+      }
+
+      loadPatients();
+
+      // Add Patient
+      $('#addPatientForm').on('submit', async function(e) {
+        e.preventDefault();
+
+        const dateTimeAdd = `${$('#triDateAdd').val()} ${$('#triTimeAdd').val()}`;
+
+        const patient = {
+          first_name: $('#firstName').val(),
+          last_name: $('#lastName').val(),
+          tri_id: $('#triageLevel').val(),
+          tri_timeDate: dateTimeAdd,
+          diagnosis: $('#diagnosis').val()
+        };
+        try {
+          const newPt = await addPatient(patient); // call your API
+          // hides the add patient modal
+          $('#addPatientModal').modal('hide');
+          // clears add patient modal for next use
+          $('#addPatientForm')[0].reset();
+          // Add the new patient directly to the DataTable without clearing
+
+          // reloads patient list
+          await loadPatients();
+
+          /**
+           *  Dylan...I tried this because the UI table contains information that relies on getting data from the 
+           * server, meaning we can't just put in straight from the 'add patient' UI. There are other options than 
+           * reloading the whole list, but for the scope of what we are doing, this seemed like the best choice.
+          */
+
+          // table.row.add({
+          //   pt_id: newPt.pt_id, // or generate temporary ID if API doesn't return
+          //   first_name: patient.first_name,
+          //   last_name: patient.last_name,
+          //   tri_id: `Level: ${patient.tri_id}`,
+          //   diagnosis: patient.diagnosis,
+          //   time_waiting: 0,
+          //   est_wait_time: 0,
+          //   move_status: 'pending'
+          // }).draw(false); // 'false' keeps current pagination/search
+        } catch(err) {
+          alert('Failed to add patient: ' + err.message);
+        }
+      });
+
+      // Edit button click
+      $('#patientTable tbody').on('click', '.edit-btn', async function() {
+        const pt_id = $(this).data('id');
+        const rowData = table.row($(this).parents('tr')).data();
+        $('#editPtId').val(pt_id);
+        $('#editFirstName').val(rowData.last_name);
+        $('#editLastName').val(rowData.first_name);
+        $('#editTriageLevel').val(rowData.tri_id);
+        $('#editMoveStatus').val(rowData.move_status);
+        $('#editDiagnosis').val(rowData.diagnosis);
+        $('#editPatientModal').modal('show');
+      });
+
+      // Update Patient/tracker
+      $('#editPatientForm').on('submit', async function(e) {
+        e.preventDefault();
+        const editTimeUpdate = `${$('#editTriDate').val()} ${$('#editTriTime').val()}`;
+        console.log('editTriDate:', $('#editTriDate').val());
+        console.log('editTriTime:', $('#editTriTime').val());
+        console.log('editTimeUpdate:', editTimeUpdate);
+        const patient = {
+          pt_id: $('#editPtId').val(),
+          last_name: $('#editLastName').val(),
+          first_name: $('#editFirstName').val(),
+          tri_id: $('#editTriageLevel').val(),
+          move_status: $('#editMoveStatus').val(),
+          diagnosis: $('#editDiagnosis').val(),
+          tri_timeDate: editTimeUpdate
+        };
+        await updatePatientDim(patient);
+        await addPatientTracker(patient);
+        $('#editPatientModal').modal('hide');
+        loadPatients();
+      });
+
+    });
+  </script>
+</body>
+</html>
