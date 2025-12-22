@@ -13,7 +13,7 @@
         {
             "label": "Architecture & Data Model",
             "children": [
-                { "label": "Data Source Model (Excel)", "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQR40sw1Oh62RaNMkZuF3LnJAVL8NRjRMRZxH6XXNd0RBZY", "embed": "iframe"},
+                { "label": "Data Source Model (Excel)", "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQR40sw1Oh62RaNMkZuF3LnJAc_YCoisPvCqF8tChJoXz8U", "embed": "iframe"},
                 { "label": "ERD Diagram (png)", "src": "", "embed": "iframe"}
                 
             ]
