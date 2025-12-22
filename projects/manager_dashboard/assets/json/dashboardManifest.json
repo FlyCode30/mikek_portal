@@ -4,21 +4,24 @@
     "defaultSrc": "projects/manager_dashboard/assets/img/power_bi_dashboard.pdf",
     "assets": [
         {
-            "label": "Source Files",
+            "label": "Documentation",
             "children": [
-                { "label": "", "src": "", "embed": "iframe"}
+                { "label": "Project and System Overview", "src": "", "embed": "iframe"},
+                { "label": "Design & Architecture Overview", "src": "", "embed": "iframe"}
             ]
         },
         {
-            "label": "Documentation",
+            "label": "Architecture & Data Model",
             "children": [
+                { "label": "Data Source Model (Excel)", "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQR40sw1Oh62RaNMkZuF3LnJAVL8NRjRMRZxH6XXNd0RBZY", "embed": "iframe"},
+                { "label": "ERD Diagram (png)", "src": "", "embed": "iframe"}
                 
             ]
         },
         {
-            "label": "Data Files",
+            "label": "Supporting Documents",
             "children": [
-                {"label": "Main Database (Excel)", "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQS9eQ4OIUccRo0c5Y8I3TjxASexu076b5ViLb8g5rfVeN8", "embed": "iframe"}
+                {"label": "Patient Flow Diagram", "src": "projects/manager_dashbaord/assets/img/patient_flow_model", "embed": "img"}
             ]
         }
             ]
