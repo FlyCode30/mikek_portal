@@ -21,7 +21,7 @@
         {
             "label": "Supporting Documents",
             "children": [
-                {"label": "Patient Flow Diagram", "src": "projects/manager_dashbaord/assets/img/patient_flow_model", "embed": "img"}
+                {"label": "Patient Flow Diagram", "src": "projects/manager_dashboard/assets/img/patient_flow_model", "embed": "img"}
             ]
         }
             ]
