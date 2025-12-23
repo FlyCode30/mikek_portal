@@ -1,0 +1,4 @@
+This was one of my first projects and was created in order to track how many hours of shift work I created per pay period. It solidified a lot of my Excel skills at the time and initially taught me the importance
+of creating independent reference cells instead of hard coding data, fundamental Excel formuals, and creating clarity in presenting data.
+
+If you want to see the Excel file in its own window for better readability, you can click on the small icon at the bottom of the view window on the far right. It is called "view full-size workbook" on hovering. It will open up the file in your browser on a separate page.
