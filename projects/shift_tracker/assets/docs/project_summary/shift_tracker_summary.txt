@@ -1,0 +1,6 @@
+This was one of my first projects and was created to track how many hours of shift work I completed per pay period. <br><br>It solidified a lot of my Excel skills at the time and initially taught me lessons like the importance
+of creating independent reference cells instead of hard coding data, fundamental Excel formuals, and creating clarity in presenting data.<br><br>
+
+if you want to view it in it's own window, click on the far-right bottom icon called ""view full-size workbook"<br><br>
+
+If you would like to download it, then CLICK HERE;

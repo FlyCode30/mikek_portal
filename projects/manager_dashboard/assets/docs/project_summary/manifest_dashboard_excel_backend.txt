@@ -1,0 +1,7 @@
+This is the Excel file for the Hospital Dashboard. It currently acts as both a backend database and as a source for front-end inputs<br><br>
+
+The database was designed after an actual hospital and CIHI standardized codes were used whenever possible. <br><br>
+
+If you want to view the file in its own window, click on the far-right bottom icon called "view full-size workbook" (on hovering over it)<br><br>
+
+If you want to download a copy of the file, CLICK HERE.

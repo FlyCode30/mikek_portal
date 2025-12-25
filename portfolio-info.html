@@ -89,6 +89,17 @@
       <div class="button-download text-center">
       <a id="downloadBtn" class="btn btn-primary" href="#" download>Download</a>
       </div>
+
+      <a
+        id="openExternalBtn"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        style="display:none"
+        class="btn"
+      >
+        Open in OneDrive
+      </a>
       
 
       <nav class="breadcrumbs">
@@ -133,13 +144,10 @@
   <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Personal</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <p>My personal contact and work pages.</p>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-github"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
@@ -150,8 +158,10 @@
   </footer>
 
 <!-- builds menu for dropdowns and secondary nav -->
+
 <script>
-function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc) {
+
+function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc, sumEl, projectSummarySrc) {
   if (!Array.isArray(items)) return;
 
   items.forEach(item => {
@@ -165,10 +175,11 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
       const subUl = document.createElement('ul');
 
       // pass all args on recursion
-      buildMenu(item.children, subUl, frame, projectKey, projectTitle, defaultSrc);
+      buildMenu(item.children, subUl, frame, projectKey, projectTitle, defaultSrc, sumEl, projectSummarySrc);
 
       li.appendChild(a);
       li.appendChild(subUl);
+
     } else {
       const a = document.createElement('a');
       a.href = '#';
@@ -181,12 +192,14 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
           window.open(item.src, '_blank', 'noopener');
         } else if (frame) {
           // frame.src = item.src;
-          setFrameSrc(item.src);
+          setFrameSrc(item.src, item.label);
         }
 
         // ✅ Breadcrumb: Project / Default(link) / Current(plain)
         updateBreadcrumb (projectTitle, defaultSrc, item.label);
 
+          // NEW: swap summary
+        setSummary(sumEl, item.summarySrc || projectSummarySrc, "");
 
         // URL sync
         const url = new URL(location.href);
@@ -204,6 +217,7 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
 
 
 // updates the menu for each project
+
   (async function () {
     const routes = {
       yahtzee: {manifest: "projects/yahtzee/assets/json/yahtzeeManifest.json" },
@@ -239,15 +253,16 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
     if (titleEl && manifest.title) titleEl.textContent = manifest.title;
 
     // load summary
-    if (sumEl && manifest.summarySrc) {
-      try {
-        const resp = await fetch(manifest.summarySrc);
-        const text = await resp.text();
-        sumEl.innerHTML = text; // use marked.parse(text) if you switch to Markdown rendering
-      } catch (e) {
-        sumEl.textContent = "(summary not available)";
-      }
-    }
+    await setSummary(sumEl, manifest.summarySrc, "");
+    // if (sumEl && manifest.summarySrc) {
+    //   try {
+    //     const resp = await fetch(manifest.summarySrc);
+    //     const text = await resp.text();
+    //     sumEl.innerHTML = text; // use marked.parse(text) if you switch to Markdown rendering
+    //   } catch (e) {
+    //     sumEl.textContent = "(summary not available)";
+    //   }
+    // }
 
     // Default iframe (load the project’s main page)
     if (frame && manifest.defaultSrc) { 
@@ -274,7 +289,7 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc)
     // build dropdown list
     if (menuEl && Array.isArray(manifest.assets)) {
       menuEl.innerHTML = '';  // clear placeholder items 
-      buildMenu(manifest.assets, menuEl, frame, key, manifest.title, manifest.defaultSrc);
+      buildMenu(manifest.assets, menuEl, frame, key, manifest.title, manifest.defaultSrc, sumEl, manifest.summarySrc);
     }
 
     // this is flattening the assets array so that someone can visit a child label directly without going through the links
@@ -345,7 +360,26 @@ function initBreadcrumb(frame, projectKey, defaultSrc, projectTitle) {
   });
 }
 
-// testing a download button for project files
+// code for download button
+
+// used for Microsoft specific file downloads. Detects Excel files.
+function isMicrosoftLike(url) {
+  const s = String(url).toLowerCase();
+  // direct extensions (GitHub-hosted or local-relative)
+  if (/\.(xlsx|xls|xlsm|doc|docx|docm|ppt|pptx|pptm)(\?|#|$)/.test(s)) return true;
+  // OneDrive short links that represent office docs
+  if (/^https?:\/\/1drv\.ms\/[xwp]\//i.test(url)) return true;
+  // SharePoint office viewers
+  if (/sharepoint\.com/i.test(url) && /(doc\.aspx|view\.aspx|wopiframe\.aspx)/i.test(url)) return true;
+  return false;
+}
+
+function toggleDownloadButton(url) {
+  const btn = document.getElementById("downloadBtn");
+  if (!btn) return;
+  btn.style.display = isMicrosoftLike(url) ? "none" : "";
+}
+
 
 function filenameFromUrl(url, fallback = "download") {
   try {
@@ -366,19 +400,59 @@ function updateDownloadLink(currentSrc, suggestedName) {
   a.setAttribute("download", fname);
 }
 
-// The one true way to set the frame + download
+// setting iFrame source
+// setting iFrame source
 function setFrameSrc(src, labelForName) {
-  const frame = document.getElementById("project-frame"); // make sure this ID matches
-  if (!frame) return;
+  const frame = document.getElementById("project-frame");
+  const downloadBtn = document.getElementById("downloadBtn");
+  if (!frame || !downloadBtn) return;
 
-   // Resolve relative paths against THIS page (works locally & on GitHub Pages)
   const resolved = new URL(src, document.baseURI).toString();
+  const fname = labelForName || filenameFromUrl(resolved);
 
+  // Hide download button for Microsoft-related files
+  if (isMicrosoftLike(resolved)) {
+    downloadBtn.style.display = "none";
+  } else {
+    downloadBtn.style.display = "";
+    updateDownloadLink(resolved, fname);
+  }
+
+  // Always set iframe source (even if it can't render)
   frame.src = resolved;
-  updateDownloadLink(resolved, labelForName || filenameFromUrl(resolved));
-
-  console.log("[setFrameSrc] src:", src, "→ resolved:", resolved);
 }
+
+// sets the summary
+async function setSummary(sumEl, summarySrc, fallbackText = "") {
+  if (!sumEl) return;
+
+  if (!summarySrc) {
+    sumEl.innerHTML = fallbackText || "";
+    return;
+  }
+
+  try {
+    const resp = await fetch(summarySrc);
+    const text = await resp.text();
+    sumEl.innerHTML = text;
+  } catch (e) {
+    sumEl.textContent = "(summary coming soon)";
+  }
+}
+
+// The one true way to set the frame + download
+// function setFrameSrc(src, labelForName) {
+//   const frame = document.getElementById("project-frame"); // make sure this ID matches
+//   if (!frame) return;
+
+//    // Resolve relative paths against THIS page (works locally & on GitHub Pages)
+//   const resolved = new URL(src, document.baseURI).toString();
+
+//   frame.src = resolved;
+//   updateDownloadLink(resolved, labelForName || filenameFromUrl(resolved));
+
+//   console.log("[setFrameSrc] src:", src, "→ resolved:", resolved);
+// }
 
 </script>
 

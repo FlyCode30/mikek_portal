@@ -1,6 +1,6 @@
 { 
     "title": "Mock Manager Dashboard",
-    "summarySrc": "",
+    "summarySrc": "projects/manager_dashboard/assets/docs/project_summary/manifest_dashboard_powerbi_main.txt",
     "defaultSrc": "projects/manager_dashboard/assets/img/power_bi_dashboard.pdf",
     "assets": [
         {
@@ -13,7 +13,12 @@
         {
             "label": "Architecture & Data Model",
             "children": [
-                { "label": "Data Source Model (Excel)", "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQR40sw1Oh62RaNMkZuF3LnJAc_YCoisPvCqF8tChJoXz8U", "embed": "iframe"},
+                { 
+                "label": "Data Source Model (Excel)", 
+                "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQQceT_j7aDqTZN9XxSNrgNWAVvtl4tCdNzJX6z8rDbCaG4", 
+                "embed": "iframe",
+                "summarySrc" : "projects/manager_dashboard/assets/docs/project_summary/manifest_dashboard_excel_backend.txt"
+                },
                 { "label": "ERD Diagram (png)", "src": "", "embed": "iframe"}
                 
             ]
@@ -21,7 +26,7 @@
         {
             "label": "Supporting Documents",
             "children": [
-                {"label": "Patient Flow Diagram", "src": "projects/manager_dashboard/assets/img/patient_flow_model.pdf", "embed": "iframe"}
+                {"label": "Patient Flow Diagram", "src": "projects/manager_dashboard/assets/docs/pdf/patient_flow_model.pdf", "embed": "iframe"}
             ]
         }
             ]
