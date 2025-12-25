@@ -272,7 +272,7 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc,
 
     // Initialize breadcrumbs for this project
     updateBreadcrumb(manifest.title, manifest.defaultSrc, null);
-    initBreadcrumb(frame, key);
+    initBreadcrumb(frame, key, sumEl, manifest.summarySrc);
 
     // If URL has ?asset=..., try to load that asset instead of default
     const assetLabel = params.get('asset');
@@ -332,7 +332,7 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc,
 
 // updates the secondary nav bar
 
-function initBreadcrumb(frame, projectKey, defaultSrc, projectTitle) {
+function initBreadcrumb(frame, projectKey, sumEl, projectSummarySrc) {
   const defaultLink = document.getElementById('crumb-default-link');
   if (!defaultLink) return;
 
@@ -348,6 +348,10 @@ function initBreadcrumb(frame, projectKey, defaultSrc, projectTitle) {
 
       // back to just "... / ProjectTitle Main"
       updateBreadcrumb(title, src, null);
+
+      // ✅ reset summary back to project-level
+      setSummary(sumEl, projectSummarySrc, "");
+
 
       // keep ?p, remove ?asset
       if (projectKey) {
