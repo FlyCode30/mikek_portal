@@ -1,0 +1,7 @@
+This is an Excel and Power BI based project that aims to replicate a full BI system that can create a wide variety of healthcare reports. This includes the BI dashboard, the data model, and a backend Excel based database that was designed with some front-end UX features in mind. Both can be viewed here<br><br>
+
+The database was designed after an actual hospital and uses CIHI standardized codes whenever possible. <br><br>
+
+Currently, I can only show Power BI files on my site via pictures and PDF's<br><br>
+
+if you want to download a copy of the Power BI file, CLICK HERE.
