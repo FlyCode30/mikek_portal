@@ -1,7 +1,8 @@
 { 
     "title": "Shift Tracker",
     "summarySrc": "projects/shift_tracker/assets/docs/shift_tracker_summary.txt",
-    "defaultSrc": "F:/my_toolbox/projects/career/portfolio_main/projects/shift_tracker/shift_tracker.xlsx",
+    "defaultSrc": "projects/shift_tracker/shift_tracker.xlsx", 
+    "embed": "iframe",
     "assets": [
             ]
     
