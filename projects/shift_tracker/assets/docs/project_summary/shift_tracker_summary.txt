@@ -3,4 +3,4 @@ of creating independent reference cells instead of hard coding data, fundamental
 
 if you want to view it in it's own window, click on the far-right bottom icon called ""view full-size workbook"<br><br>
 
-If you would like to download it, then CLICK HERE;
+If you would like to download the zipped Excel file, then <a href= "https://github.com/FlyCode30/mikek_portal/raw/refs/heads/master/projects/shift_tracker/assets/docs/microsoft_files/shift_tracker.zip">CLICK HERE</a>
