@@ -6,7 +6,7 @@ If you want to view the file in its own window, click on the far-right bottom ic
 
 If you want to download a copy of the file
 <a
-  href="https://raw.githubusercontent.com/FlyCode30/mikek_portal/master/projects/manager_dashboard/assets/docs/microsoft_files/bi_backend_v1.0.xlsm"
+  href="https://github.com/FlyCode30/mikek_portal/raw/refs/heads/master/projects/manager_dashboard/assets/docs/microsoft_files/bi_backend_v1.0.zip"
   download
 >
   CLICK HERE

@@ -1,6 +1,6 @@
 { 
     "title": "Shift Tracker",
-    "summarySrc": "projects/shift_tracker/assets/docs/shift_tracker_summary.txt",
+    "summarySrc": "projects/shift_tracker/assets/docs/project_summary/shift_tracker_summary.txt",
     "defaultSrc": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQShRiXZZTA4R7L2lNFckPNOAZJxbXQ1ZBSyXIQkQD-nNwM", 
     "embed": "iframe",
     "assets": [
