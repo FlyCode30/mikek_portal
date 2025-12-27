@@ -78,7 +78,7 @@
       <div class="heading">
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
+            <div class="col-lg-8 portfolio-summary-width">
               <h1>Portfolio Details</h1>
               <p class="mb-0" id="project-summary"></p>
             </div>
@@ -378,6 +378,10 @@ function isMicrosoftLike(url) {
   return false;
 }
 
+function isNotStandaloneDownload(url) {
+  return String(url).toLowerCase().endsWith(".html");
+}
+
 function toggleDownloadButton(url) {
   const btn = document.getElementById("downloadBtn");
   if (!btn) return;
@@ -415,7 +419,7 @@ function setFrameSrc(src, labelForName) {
   const fname = labelForName || filenameFromUrl(resolved);
 
   // Hide download button for Microsoft-related files
-  if (isMicrosoftLike(resolved)) {
+  if (isMicrosoftLike(resolved) || isNotStandaloneDownload(resolved)) {
     downloadBtn.style.display = "none";
   } else {
     downloadBtn.style.display = "";
