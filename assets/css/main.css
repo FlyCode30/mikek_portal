@@ -1315,3 +1315,52 @@ section,
 .portfolio-summary-width {
   width: 85%;
 }
+
+/* Root injected menu */
+#project-assets-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each parent LI must be the positioning context */
+#project-assets-menu > li {
+  position: relative;
+}
+
+/* Second tier UL: force it to sit BELOW the parent item, not overlap */
+#project-assets-menu > li > ul {
+  position: absolute;   /* keep it as a dropdown */
+  top: 100%;            /* <-- key: place under the parent LI */
+  left: 0;
+  margin-top: 8px;
+  margin-left: 0;      /* gap between tiers - tweak */
+  z-index: 1000;
+  display: none;
+  transform: none !important;
+}
+
+/* show only when parent has a class like .open */
+#project-assets-menu li.open > ul {
+  display: block;
+}
+
+#project-assets-menu li.dropdown:hover > ul {
+  display: none;
+}
+
+#project-assets-menu li.dropdown.open:hover > ul {
+  display: block;
+}
+
+/* ✅ Mobile: stack submenus instead of absolute-positioning */
+@media (max-width: 1199px) {  /* matches BootstrapMade mobile nav breakpoint in many templates */
+  #project-assets-menu > li > ul {
+    position: static;     /* key change */
+    top: auto;
+    left: auto;
+    z-index: auto;
+    margin-top: 0;
+    padding-left: 16px;   /* indent children */
+  }
+}

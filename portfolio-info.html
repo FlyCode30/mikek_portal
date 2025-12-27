@@ -173,6 +173,8 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc,
       a.href = '#';
       a.innerHTML = `<span>${item.label}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>`;
       const subUl = document.createElement('ul');
+      // new addition for click
+      subUl.classList.add('submenu');
 
       // pass all args on recursion
       buildMenu(item.children, subUl, frame, projectKey, projectTitle, defaultSrc, sumEl, projectSummarySrc);
@@ -290,6 +292,8 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc,
     if (menuEl && Array.isArray(manifest.assets)) {
       menuEl.innerHTML = '';  // clear placeholder items 
       buildMenu(manifest.assets, menuEl, frame, key, manifest.title, manifest.defaultSrc, sumEl, manifest.summarySrc);
+      // initiates the clickable link
+      initProjectAssetsMenuToggles(menuEl);
     }
 
     // this is flattening the assets array so that someone can visit a child label directly without going through the links
@@ -446,6 +450,36 @@ async function setSummary(sumEl, summarySrc, fallbackText = "") {
   } catch (e) {
     sumEl.textContent = "(summary coming soon)";
   }
+}
+
+// creates the on-click for the dropdown menu
+function initProjectAssetsMenuToggles(menuRoot) {
+  if (!menuRoot) return;
+
+  menuRoot.addEventListener('click', (e) => {
+    const toggleLink = e.target.closest('li.dropdown > a');
+    if (!toggleLink) return;
+
+    // make sure the click is inside this menuRoot
+    if (!menuRoot.contains(toggleLink)) return;
+
+    e.preventDefault();
+
+    const li = toggleLink.closest('li.dropdown');
+    if (!li) return;
+
+    // close sibling dropdowns at the same level (optional)
+    const siblings = [...li.parentElement.children].filter(x => x !== li);
+    siblings.forEach(sib => sib.classList.remove('open'));
+
+    li.classList.toggle('open');
+  });
+
+  // optional: click outside to close everything
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('#project-assets-menu')) return;
+    menuRoot.querySelectorAll('li.dropdown.open').forEach(li => li.classList.remove('open'));
+  });
 }
 
 // The one true way to set the frame + download
