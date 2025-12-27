@@ -1,0 +1,3 @@
+- This was a student project where we tasked to create an hospital triage app using html, css, JavaScript, Express, and our choice of database. This one used MySQL.<br><br>
+- This scope of this project was limited, so some app functionalities which would have been separated, were combined into one app.
+- To download the source files, <a href = "">CLICK HERE</a>.
