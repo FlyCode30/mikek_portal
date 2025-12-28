@@ -1,10 +1,10 @@
 { 
     "title": "Triage App",
-    "summarySrc": "projects/triage_app/public/docs/triage_app_summary.txt",
+    "summarySrc": "projects/triage_app/public/docs/project_summary/triage_app_summary.txt",
     "defaultSrc": "projects/triage_app/public/index.html",
     "assets": [
         {
-            "label": "Read Me",
+            "label": "Documentation",
             "children": [
                 { "label": "App Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/README.md", "embed": "iframe" },
                 { "label": "Database Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" }
