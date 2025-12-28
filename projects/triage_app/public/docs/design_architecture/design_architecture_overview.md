@@ -1,4 +1,4 @@
-# 🏥 Hospital Triage Management App
+# 🏥 Systems Architecture Overview
 
 ## 📌 Overview
 
