@@ -3,11 +3,23 @@
     "summarySrc": "projects/triage_app/public/docs/project_summary/triage_app_summary.txt",
     "defaultSrc": "projects/triage_app/public/index.html",
     "assets": [
+           {
+            "label": "Implementation",
+            "children": [
+                { "label": "Staff Triage Tracker", "src": "projects/triage_app/public/index.html", "embed": "iframe" },
+                { "label": "Patient Portal - Triage", "src": "projects/triage_app/public/pt_dashboard.html", "embed": "iframe" }
+            ]
+        },
         {
             "label": "Documentation",
             "children": [
-                { "label": "App Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/README.md", "embed": "iframe" },
-                { "label": "Database Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" }
+                { 
+                "label" : "Project and System Requirements",
+                "children" : [
+                    { "label": "App Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/README.md", "embed": "iframe" },
+                    { "label": "Database Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" }
+                ]
+            }
             ]
         },
         {
@@ -21,5 +33,4 @@
     
 }
     
-
 
