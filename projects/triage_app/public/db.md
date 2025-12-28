@@ -2,9 +2,9 @@
 
 ## Preface
 
-This project originally ran as a full stack application using a Node.js/Express server and a MySQL database. For the portfolio version hosted on GitHub Pages, the backend has been removed and the application is powered by static JSON data instead. The schema below represents the original database design. It is my intention to gradually shift this back to using a database, but for now, this was left to explain the original design choices made.
+This project originally ran as a full stack application using a Node.js/Express server and a MySQL database. For the portfolio version you are viewing now, the backend has been removed and the application is powered by static JSON data instead. The schema below represents the original database design. It is my intention to gradually shift this back to using a database, but for now, this was left to explain the original design choices made.
 
-Also, it should be noted that this was done as a school project with specific scope. For that reason, certain functions of the app were combined into 1 UI, although future iterations will attempt to separate functions so it more closely resembles something that used in real life (for example, a database that contains medical information wouldn't also serve as an entity to store the login information for a specific app).
+Also, it should be noted that this was done as a school project with specific scope. For that reason, certain functions of the app were combined into 1 UI, although future iterations will attempt to separate functions so it more closely resembles something that used in real life (for example, a database that contains medical information would not also serve as an entity to store the login information for a specific app).
 
 ## 1. Entities Description
 
@@ -100,7 +100,7 @@ Flow Tracker ↔ Intervention
 Estimated wait time can be calculated dynamically based on:
 
 - **Historical average wait times** per triage level
-- **Priority rules** Orders tracker table by triage level and then time triaged. Ensures higher priority goes to higher triage status first, and then by order of triaged.
+- **Priority rules** Orders tracker table by triage level and then time triaged. Ensures higher priority goes to higher triage status first, and then by order of the time the patient was triaged.
 - **Calculations** Once the list is prioritized, an estimated wait time is calculated by subtracting their benchmark wait time from the time they have been waiting. A running tally is then created from this estimated wait time to come up with each patients estimated wait time (the own patients wait time must also be subtracted since a running tally includes their own. Once everyone ahead of a given patient has been seen, they would not keep waiting, thus their own wait time is not included).
 - **Current load** In the real world, it could be possible to calculate a wait time based on available staff, but for the purposes of this projec, that was not taken into consideration.
 
