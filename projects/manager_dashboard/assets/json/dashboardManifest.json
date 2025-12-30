@@ -4,15 +4,18 @@
     "defaultSrc": "projects/manager_dashboard/assets/img/power_bi_dashboard.pdf",
     "assets": [
         {
-            "label": "Documentation",
+            "label": "Implementation",
             "children": [
-                { "label": "Project and System Overview", "src": "", "embed": "iframe"},
-                { "label": "Design & Architecture Overview", "src": "", "embed": "iframe"}
+                { 
+                    "label": "In Patient Tracker", 
+                    "src": "", 
+                    "embed": "iframe"},
             ]
         },
         {
-            "label": "Architecture & Data Model",
+            "label": "Documentation",
             "children": [
+                { "label": "Project and System"
                 { 
                 "label": "Data Source Model (Excel)", 
                 "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQQceT_j7aDqTZN9XxSNrgNWAVvtl4tCdNzJX6z8rDbCaG4", 

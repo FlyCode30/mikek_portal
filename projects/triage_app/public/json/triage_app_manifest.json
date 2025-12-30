@@ -1,13 +1,22 @@
 { 
     "title": "Triage App",
-    "summarySrc": "projects/triage_app/public/docs/project_summary/triage_app_summary.txt",
+    "summarySrc": "projects/triage_app/public/docs/portfolio_summary/triage_app_summary.txt",
     "defaultSrc": "projects/triage_app/public/index.html",
     "assets": [
            {
             "label": "Implementation",
             "children": [
-                { "label": "Staff Triage Tracker", "src": "projects/triage_app/public/index.html", "embed": "iframe" },
-                { "label": "Patient Portal - Triage", "src": "projects/triage_app/public/pt_dashboard.html", "embed": "iframe" }
+                { 
+                    "label": "Staff Triage Tracker", 
+                    "src": "projects/triage_app/public/index.html", 
+                    "summarySrc": "projects/triage_app/public/docs/portfolio_summary/triage_app_summary.txt",
+                    "embed": "iframe" 
+                },
+                { 
+                    "label": "Patient Portal - Triage", 
+                    "src": "projects/triage_app/public/pt_dashboard.html", 
+                    "summarySrc": "projects/triage_app/public/docs/portfolio_summary/triage_app_summary_patient_portal.txt",
+                    "embed": "iframe" }
             ]
         },
         {
@@ -16,24 +25,37 @@
                 { 
                     "label" : "Project and System Requirements",
                     "children" : [
-                        { "label": "Project and Systems Overview (md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/README.md", "embed": "iframe" }
+                        { 
+                            "label": "Project and Systems Overview (md)", 
+                            "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/docs/project_systems/project_system_overview.md", 
+                            "summarySrc": "projects/triage_app/public/docs/portfolio_summary/project_system_summary_triage_app.txt",
+                            "embed": "iframe" }
                 ]
                 },
                 {
                     "label" : "Design and Architecture Docs",
                     "children" : [
-                        { "label": "Design and Architecture Overview(md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" }
+                        { "label": "Design and Architecture Overview(md)", 
+                        "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/docs/design_architecture/design_architecture_overview.md", 
+                        "summarySrc": "projects/triage_app/public/docs/portfolio_summary/design_architecture_summary_triage_app.txt",
+                        "embed": "iframe" }
                     ]
                 },
                 {
                     "label" : "Database Docs",
                     "children" : [
-                        { "label": "Design and Architecture Overview(md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/db.md", "embed": "iframe" }
+                        { "label": "Design and Architecture Overview(md)", 
+                        "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/mikek_portal/refs/heads/master/projects/triage_app/public/docs/database/db.md", 
+                        "summarySrc": "projects/triage_app/public/docs/portfolio_summary/database_design_summary_triage_app.txt",
+                        "embed": "iframe" },
+                        { "label": "ERD Diagram", "src": "projects/triage_app/public/docs/database/triage_app_db_model.pdf", 
+                        "summarySrc": "projects/triage_app/public/docs/portfolio_summary/erd_diagram_summary_triage_app.txt",
+                        "embed": "iframe"}
                     ]
                 }
             ]
         }
-            ]
+    ]
     
 }
     
