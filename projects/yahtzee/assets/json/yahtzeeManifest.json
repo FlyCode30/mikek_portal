@@ -6,16 +6,21 @@
         {
             "label": "Implementation",
             "children": [
-                { "label": "Yahtzee Game - Main (html)", "src": "projects/yahtzee/playingAreaYatzy.html", 
-                "embed": "iframe"}
+                { 
+                    "label": "Yahtzee Game - Main (html)", 
+                    "src": "projects/yahtzee/playingAreaYatzy.html", 
+                    "embed": "iframe"}
                 
             ]
         },
         {
             "label": "Documentation",
             "children": [
-                { "label": "Design & Architecture Summary(md)", "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/cst3106_portfolio/refs/heads/main/public/projects/yahtzee/assets/docs/design_documentation.md", 
-                "embed": "iframe"}
+                { 
+                    "label": "Design & Architecture Summary(md)", 
+                    "src": "projects/common/markdown_reader.html?md=https://raw.githubusercontent.com/FlyCode30/cst3106_portfolio/refs/heads/main/public/projects/yahtzee/assets/docs/design_documentation.md", 
+                    "summarySrc": "projects/yahtzee/assets/docs/project_summary/summary_design_notes_yahtzee.txt",
+                    "embed": "iframe"}
                 
             ]
         }

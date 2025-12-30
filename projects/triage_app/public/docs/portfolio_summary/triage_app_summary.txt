@@ -1,0 +1,4 @@
+- This was a student project where we were tasked with creating a hospital triage app using html, css, JavaScript, Express, and our choice of database. This one used MySQL. The project had a limited scope,
+so the functionality of different parts of the app were combined, but this will will be addressed in future iterations.<br><br>
+- This page shows the triage patient tracker that a staff member would see.<br><br>
+- To download the source files, <a href = "https://github.com/FlyCode30/mikek_portal/raw/refs/heads/master/projects/triage_app/public/source/triage_app.zip">CLICK HERE</a>.

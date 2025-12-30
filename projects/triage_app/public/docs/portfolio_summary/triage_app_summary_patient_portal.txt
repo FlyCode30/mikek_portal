@@ -1,0 +1,2 @@
+- This page shows the triage app from the perspective of the patient portal.<br><br>
+- To download the source files, <a href = "https://github.com/FlyCode30/mikek_portal/raw/refs/heads/master/projects/triage_app/public/source/triage_app.zip">CLICK HERE</a>.

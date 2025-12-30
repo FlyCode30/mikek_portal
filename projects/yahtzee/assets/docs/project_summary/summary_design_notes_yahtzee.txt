@@ -1,0 +1,1 @@
+- These are the original design notes for the Yahtzee game. They have not been migrated to a more project management focused setup as of yet, so this covers the entirety of the Yahatzee project. Future iterations will address this.
