@@ -1,3 +1,3 @@
 Place holder summary for budget tracker.<br><br>
 
-To download a copy of this file, <a href= "projects\career\portfolio_main\projects\budget_tracker\assets/budget_tracker_portfolio.zip">CLICK HERE</a>.
+To download a copy of this file, <a href= "projects/career/portfolio_main/projects/budget_tracker/lassets/budget_tracker_portfolio.zip">CLICK HERE</a>.
