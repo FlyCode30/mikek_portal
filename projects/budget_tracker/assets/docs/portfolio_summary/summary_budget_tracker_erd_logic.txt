@@ -1,0 +1,3 @@
+This the logical ER diagram for Project: Budget Tracker, and serves as the primary Power BI model used for analysis.<br>
+
+NOTE: Some significant adjustments need to be made to summary_all before it can be joinged to date, but there is a 1 to many relationship between these 2 entities. 

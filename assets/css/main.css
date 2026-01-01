@@ -1364,3 +1364,23 @@ section,
     padding-left: 16px;   /* indent children */
   }
 }
+
+.portfolio-content {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* pick one ratio and stick to it */
+  overflow: hidden;
+}
+
+.portfolio-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center;
+}
+
+/* .portfolio-item {
+  position: relative !important;
+  height: auto !important;
+} */

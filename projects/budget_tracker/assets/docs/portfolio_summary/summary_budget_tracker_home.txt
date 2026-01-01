@@ -1,0 +1,8 @@
+This project is a budget tracker and analytical tool that can receive financial transactions, store the data using a model based on accounting principles, and then analyze that data with a BI tool. 
+The Excel file located under "Project File --> Implementation" serves as the front-end UI and the primary data source, while the Power BI handles the analysis.<br><br>
+
+The following Power BI image shown is from a mock-up, as the actual Power BI has not been completed at this point.<br><br> 
+
+***DISCLAIMER*** - All financial data shown was generated using the help of ChatGPT, and does not reflect the personal data of any individual. <br><br>
+
+To download a copy of this entire project, <a href= "projects/budget_tracker/budget_tracker_portfolio.zip">CLICK HERE</a>. To download a copy of this pdf file, click on the download button below. 
