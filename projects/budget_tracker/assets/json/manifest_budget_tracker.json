@@ -1,6 +1,6 @@
 { 
     "title": "Budget Tracker",
-    "summarySrc": "",
+    "summarySrc": "projects/budget_tracker/assets/docs/portfolio_summary/summary_budget_tracker_home.txt",
     "defaultSrc": "projects/budget_tracker/budget_tracker_main_power_bi.pdf",
     "assets": [
         {
@@ -11,6 +11,12 @@
                     "label": "Main Tracker", 
                     "src": "projects/budget_tracker/budget_tracker_main_power_bi.pdf", 
                     "embed": "iframe"
+                },
+                {
+                    "label": "Data Source (Excel)", 
+                    "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQRiX24wC2ddSKTBBF8fbRkFAWBE1rhAVTeGulZifbbefDg", 
+                    "embed": "iframe",
+                    "summarySrc" : "projects/budget_tracker/assets/docs/portfolio_summary/summary_budget_tracker_excel_main.txt"
                 }
             ]
         },
@@ -19,18 +25,25 @@
             "children": [
                 { 
                     "label": "Database Docs",
-                    "children": [
+                    "children": 
+                    [
                         {
-                            "label": "Data Source (Excel)", 
-                            "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQRiX24wC2ddSKTBBF8fbRkFAWBE1rhAVTeGulZifbbefDg", 
+                            "label": "ERD - Logic (pdf)", 
+                            "src": "projects/budget_tracker/assets/docs/pdf/budget_track_erd_logic.pdf", 
                             "embed": "iframe",
-                            "summarySrc" : "projects/budget_tracker/assets/docs/portfolio_summary/summary_budget_tracker_excel_main.txt"
+                            "summarySrc" : "projects/budget_tracker/assets/docs/portfolio_summary/summary_budget_tracker_erd_logic.txt"
+                        },
+                        {
+                            "label": "ERD - Concept (pdf)", 
+                            "src": "projects/budget_tracker/assets/docs/pdf/budget_track_erd_concept.pdf", 
+                            "embed": "iframe",
+                            "summarySrc" : "projects/budget_tracker/assets/docs/portfolio_summary/summary_budget_tracker_erd_concept.txt"
                         }
-                
                     ]
                 }
             ]
         }
     ]
 }
+
     
