@@ -35,6 +35,7 @@
                         {
                             "label": "Patient Flow Model",
                             "src": "projects/manager_dashboard/assets/docs/pdf/patient_flow_model.pdf", 
+                            "summarySrc": "projects/manager_dashboard/assets/docs/project_summary/dashboard_doc_pt_flow_model.txt",
                             "embed": "iframe"
                         }
                     ]

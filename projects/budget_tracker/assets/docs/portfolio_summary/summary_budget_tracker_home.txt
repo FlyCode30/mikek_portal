@@ -1,5 +1,5 @@
 This project is a budget tracker and analytical tool that can receive financial transactions, store the data using a model based on accounting principles, and then analyze that data with a BI tool. 
-The Excel file located under "Project File --> Implementation" serves as the front-end UI and the primary data source, while the Power BI handles the analysis.<br><br>
+The Excel file "Data Source" located under "Project File --> Implementation" serves as the front-end UI and the primary data source, while the Power BI handles the analysis.<br><br>
 
 The following Power BI image shown is from a mock-up, as the actual Power BI has not been completed at this point.<br><br> 
 
