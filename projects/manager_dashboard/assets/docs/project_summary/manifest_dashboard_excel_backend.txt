@@ -1,4 +1,4 @@
-This is the Excel file for the Hospital Dashboard. It currently acts as both a backend database and as a source for front-end inputs<br><br>
+This is the Excel file for the Hospital Dashboard. It currently acts as both a backend database and as a source for front-end inputs.<br><br>
 
 The database was designed after an actual hospital and CIHI standardized codes were used whenever possible. <br><br>
 

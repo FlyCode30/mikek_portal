@@ -1,0 +1,1 @@
+This is a patient flow model illustrating how a general person could move through the healthcare system. This theoretical foundation helped form the basis for how the database model was created.
