@@ -1,17 +1,24 @@
 { 
     "title": "Mock Manager Dashboard",
     "summarySrc": "projects/manager_dashboard/assets/docs/project_summary/manifest_dashboard_powerbi_main.txt",
-    "defaultSrc": "projects/manager_dashboard/assets/img/power_bi_dashboard.pdf",
+    "defaultSrc": "projects/manager_dashboard/in_pt_dashboard_v0.2.pdf",
     "assets": [
         {
             "label": "Implementation",
             "children": 
             [
                 { 
-                    "label": "In Patient Tracker", 
-                    "src": "projects/manager_dashboard/assets/img/power_bi_dashboard.pdf", 
+                    "label": "In Patient Tracker (powerBI)", 
+                    "src": "projects/manager_dashboard/in_pt_dashboard_v0.2.pdf", 
                     "embed": "iframe"
+                },
+                {
+                    "label": "Data Source Model (Excel)", 
+                    "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQQceT_j7aDqTZN9XxSNrgNWAVvtl4tCdNzJX6z8rDbCaG4", 
+                    "embed": "iframe",
+                    "summarySrc" : "projects/manager_dashboard/assets/docs/project_summary/manifest_dashboard_excel_backend.txt"
                 }
+
             ]
         },
         {
@@ -20,12 +27,6 @@
                 { 
                     "label": "Database Docs",
                     "children": [
-                        {
-                            "label": "Data Source Model (Excel)", 
-                            "src": "https://1drv.ms/x/c/8d6f6fc8f269edf4/IQQceT_j7aDqTZN9XxSNrgNWAVvtl4tCdNzJX6z8rDbCaG4", 
-                            "embed": "iframe",
-                            "summarySrc" : "projects/manager_dashboard/assets/docs/project_summary/manifest_dashboard_excel_backend.txt"
-                        },
                         { 
                             "label": "ERD Diagram (png)", 
                             "src": "", 
