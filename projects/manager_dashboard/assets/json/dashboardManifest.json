@@ -33,7 +33,7 @@
                             "embed": "iframe"
                         },
                         {
-                            "label": "Patietn Flow Model",
+                            "label": "Patient Flow Model",
                             "src": "projects/manager_dashboard/assets/docs/pdf/patient_flow_model.pdf", 
                             "embed": "iframe"
                         }

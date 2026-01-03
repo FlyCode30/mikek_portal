@@ -127,10 +127,12 @@
 
       <div class="container">
         
-        <iframe id="project-frame" 
+        <iframe 
+          id="project-frame" 
           loading="lazy"
           referrerpolicy="no-referrer"
           title="Project viewer"
+          width="100%"
           frameborder="0"
           allowfullscreen
           
@@ -285,6 +287,7 @@ function buildMenu(items, parentUl, frame, projectKey, projectTitle, defaultSrc,
       if (found && frame) {
         setFrameSrc(found.src, found.label);
         updateBreadcrumb(manifest.title, manifest.defaultSrc, found.label);
+        setSummary(sumEl, found.summarySrc || manifest.summarySrc, "");
         
       }
     }
