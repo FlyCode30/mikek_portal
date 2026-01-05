@@ -29,7 +29,8 @@
                     "children": [
                         { 
                             "label": "ERD Diagram (png)", 
-                            "src": "", 
+                            "src": "projects/manager_dashboard/assets/docs/pdf/hosp_dash_erd_logic.pdf", 
+                            "summarySrc": "",
                             "embed": "iframe"
                         },
                         {
