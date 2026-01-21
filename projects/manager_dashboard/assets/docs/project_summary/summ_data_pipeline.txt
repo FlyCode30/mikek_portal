@@ -1,0 +1,1 @@
+This document gives an overview of how a data pipeline would work if the the mock dashboard were used in the real life setting. 

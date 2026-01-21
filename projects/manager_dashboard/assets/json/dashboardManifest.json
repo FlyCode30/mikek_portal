@@ -8,9 +8,15 @@
             "children": 
             [
                 { 
-                    "label": "In Patient Tracker (powerBI)", 
+                    "label": "In Patient Tracker (PowerBI)", 
                     "src": "projects/manager_dashboard/in_pt_dashboard_v0.2.pdf", 
                     "embed": "iframe"
+                },
+                {
+                    "label": "Room Utilization Tracker (PowerBI)", 
+                    "src": "projects/manager_dashboard/assets/docs/pdf/dashboard_room_utilization.pdf", 
+                    "embed": "iframe",
+                    "summarySrc" : "projects/manager_dashboard/assets/docs/project_summary/summ_room_utilization.txt"
                 },
                 {
                     "label": "Data Source Model (Excel)", 
@@ -28,15 +34,21 @@
                     "label": "Database Docs",
                     "children": [
                         { 
-                            "label": "ERD Diagram (png)", 
-                            "src": "projects/manager_dashboard/assets/docs/pdf/hosp_dash_erd_logic.pdf", 
-                            "summarySrc": "",
+                            "label": "Database Architecture", 
+                            "src": "projects/manager_dashboard/assets/docs/pdf/database_arch_doc_v2.0.pdf", 
+                            "summarySrc": "projects/manager_dashboard/assets/docs/project_summary/summ_database_arch.txt",
                             "embed": "iframe"
                         },
                         {
                             "label": "Patient Flow Model",
                             "src": "projects/manager_dashboard/assets/docs/pdf/patient_flow_model.pdf", 
                             "summarySrc": "projects/manager_dashboard/assets/docs/project_summary/dashboard_doc_pt_flow_model.txt",
+                            "embed": "iframe"
+                        },
+                        {
+                            "label": "Data Pipeline - Hospital Dashboard",
+                            "src": "projects/manager_dashboard/assets/docs/pdf/data_pipeline.pdf", 
+                            "summarySrc": "projects/manager_dashboard/assets/docs/project_summary/summ_data_pipeline.txt",
                             "embed": "iframe"
                         }
                     ]

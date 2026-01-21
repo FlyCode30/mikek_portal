@@ -1,0 +1,1 @@
+This dashboard is a mock-up for a room utilization dashboard. It was created with a hospital clinic setting in mind, but the overall design is easily transferable to any hospital setting. 
