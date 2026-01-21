@@ -1,0 +1,3 @@
+This is the primary database architecture document. It contains the project purpose, schemas, diagrams, and data dictionaries.<br><br>
+
+Some of the data dictionary information has to be condensed so it will fit. More detailed explanations can be found in the Excel source file. 
